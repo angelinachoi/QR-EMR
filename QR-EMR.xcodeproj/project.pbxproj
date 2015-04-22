@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A22A9DC1AE7DB3800ECA13F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22A9DB1AE7DB3800ECA13F /* AppDelegate.swift */; };
+		5A22A9DE1AE7DB3800ECA13F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22A9DD1AE7DB3800ECA13F /* ViewController.swift */; };
+		5A22A9E11AE7DB3800ECA13F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A22A9DF1AE7DB3800ECA13F /* Main.storyboard */; };
+		5A22A9E31AE7DB3800ECA13F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A22A9E21AE7DB3800ECA13F /* Images.xcassets */; };
+		5A22A9E61AE7DB3800ECA13F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A22A9E41AE7DB3800ECA13F /* LaunchScreen.xib */; };
+		5A22A9F21AE7DB3900ECA13F /* QR_EMRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A22A9F11AE7DB3900ECA13F /* QR_EMRTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A22A9EC1AE7DB3900ECA13F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A22A9CE1AE7DB3800ECA13F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A22A9D51AE7DB3800ECA13F;
+			remoteInfo = "QR-EMR";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5A22A9D61AE7DB3800ECA13F /* QR-EMR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR-EMR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A22A9DA1AE7DB3800ECA13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A22A9DB1AE7DB3800ECA13F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5A22A9DD1AE7DB3800ECA13F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5A22A9E01AE7DB3800ECA13F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A22A9E21AE7DB3800ECA13F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5A22A9E51AE7DB3800ECA13F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5A22A9EB1AE7DB3900ECA13F /* QR-EMRTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QR-EMRTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A22A9F01AE7DB3900ECA13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A22A9F11AE7DB3900ECA13F /* QR_EMRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR_EMRTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A22A9D31AE7DB3800ECA13F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A22A9E81AE7DB3900ECA13F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A22A9CD1AE7DB3800ECA13F = {
+			isa = PBXGroup;
+			children = (
+				5A22A9D81AE7DB3800ECA13F /* QR-EMR */,
+				5A22A9EE1AE7DB3900ECA13F /* QR-EMRTests */,
+				5A22A9D71AE7DB3800ECA13F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5A22A9D71AE7DB3800ECA13F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A22A9D61AE7DB3800ECA13F /* QR-EMR.app */,
+				5A22A9EB1AE7DB3900ECA13F /* QR-EMRTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A22A9D81AE7DB3800ECA13F /* QR-EMR */ = {
+			isa = PBXGroup;
+			children = (
+				5A22A9DB1AE7DB3800ECA13F /* AppDelegate.swift */,
+				5A22A9DD1AE7DB3800ECA13F /* ViewController.swift */,
+				5A22A9DF1AE7DB3800ECA13F /* Main.storyboard */,
+				5A22A9E21AE7DB3800ECA13F /* Images.xcassets */,
+				5A22A9E41AE7DB3800ECA13F /* LaunchScreen.xib */,
+				5A22A9D91AE7DB3800ECA13F /* Supporting Files */,
+			);
+			path = "QR-EMR";
+			sourceTree = "<group>";
+		};
+		5A22A9D91AE7DB3800ECA13F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A22A9DA1AE7DB3800ECA13F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A22A9EE1AE7DB3900ECA13F /* QR-EMRTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A22A9F11AE7DB3900ECA13F /* QR_EMRTests.swift */,
+				5A22A9EF1AE7DB3900ECA13F /* Supporting Files */,
+			);
+			path = "QR-EMRTests";
+			sourceTree = "<group>";
+		};
+		5A22A9EF1AE7DB3900ECA13F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5A22A9F01AE7DB3900ECA13F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A22A9D51AE7DB3800ECA13F /* QR-EMR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A22A9F51AE7DB3900ECA13F /* Build configuration list for PBXNativeTarget "QR-EMR" */;
+			buildPhases = (
+				5A22A9D21AE7DB3800ECA13F /* Sources */,
+				5A22A9D31AE7DB3800ECA13F /* Frameworks */,
+				5A22A9D41AE7DB3800ECA13F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QR-EMR";
+			productName = "QR-EMR";
+			productReference = 5A22A9D61AE7DB3800ECA13F /* QR-EMR.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A22A9EA1AE7DB3900ECA13F /* QR-EMRTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A22A9F81AE7DB3900ECA13F /* Build configuration list for PBXNativeTarget "QR-EMRTests" */;
+			buildPhases = (
+				5A22A9E71AE7DB3900ECA13F /* Sources */,
+				5A22A9E81AE7DB3900ECA13F /* Frameworks */,
+				5A22A9E91AE7DB3900ECA13F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A22A9ED1AE7DB3900ECA13F /* PBXTargetDependency */,
+			);
+			name = "QR-EMRTests";
+			productName = "QR-EMRTests";
+			productReference = 5A22A9EB1AE7DB3900ECA13F /* QR-EMRTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A22A9CE1AE7DB3800ECA13F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Angelina Choi";
+				TargetAttributes = {
+					5A22A9D51AE7DB3800ECA13F = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					5A22A9EA1AE7DB3900ECA13F = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 5A22A9D51AE7DB3800ECA13F;
+					};
+				};
+			};
+			buildConfigurationList = 5A22A9D11AE7DB3800ECA13F /* Build configuration list for PBXProject "QR-EMR" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A22A9CD1AE7DB3800ECA13F;
+			productRefGroup = 5A22A9D71AE7DB3800ECA13F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A22A9D51AE7DB3800ECA13F /* QR-EMR */,
+				5A22A9EA1AE7DB3900ECA13F /* QR-EMRTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A22A9D41AE7DB3800ECA13F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A22A9E11AE7DB3800ECA13F /* Main.storyboard in Resources */,
+				5A22A9E61AE7DB3800ECA13F /* LaunchScreen.xib in Resources */,
+				5A22A9E31AE7DB3800ECA13F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A22A9E91AE7DB3900ECA13F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A22A9D21AE7DB3800ECA13F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A22A9DE1AE7DB3800ECA13F /* ViewController.swift in Sources */,
+				5A22A9DC1AE7DB3800ECA13F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A22A9E71AE7DB3900ECA13F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A22A9F21AE7DB3900ECA13F /* QR_EMRTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A22A9ED1AE7DB3900ECA13F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A22A9D51AE7DB3800ECA13F /* QR-EMR */;
+			targetProxy = 5A22A9EC1AE7DB3900ECA13F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5A22A9DF1AE7DB3800ECA13F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A22A9E01AE7DB3800ECA13F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5A22A9E41AE7DB3800ECA13F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A22A9E51AE7DB3800ECA13F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A22A9F31AE7DB3900ECA13F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A22A9F41AE7DB3900ECA13F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A22A9F61AE7DB3900ECA13F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "QR-EMR/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5A22A9F71AE7DB3900ECA13F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "QR-EMR/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5A22A9F91AE7DB3900ECA13F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "QR-EMRTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QR-EMR.app/QR-EMR";
+			};
+			name = Debug;
+		};
+		5A22A9FA1AE7DB3900ECA13F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "QR-EMRTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QR-EMR.app/QR-EMR";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A22A9D11AE7DB3800ECA13F /* Build configuration list for PBXProject "QR-EMR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A22A9F31AE7DB3900ECA13F /* Debug */,
+				5A22A9F41AE7DB3900ECA13F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A22A9F51AE7DB3900ECA13F /* Build configuration list for PBXNativeTarget "QR-EMR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A22A9F61AE7DB3900ECA13F /* Debug */,
+				5A22A9F71AE7DB3900ECA13F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5A22A9F81AE7DB3900ECA13F /* Build configuration list for PBXNativeTarget "QR-EMRTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A22A9F91AE7DB3900ECA13F /* Debug */,
+				5A22A9FA1AE7DB3900ECA13F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A22A9CE1AE7DB3800ECA13F /* Project object */;
+}
