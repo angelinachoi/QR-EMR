@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QR-EMR/QRCodeReader.swift"
+            timestampString = "451833101.916683"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "captureOutput(_:didOutputMetadataObjects:fromConnection:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QR-EMR/QRCodeReader.swift"
+            timestampString = "451503375.651209"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "QRCodeReader"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QR_EMR.QRCodeReader.logoImage.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIImageView&gt;"
+                  moduleName = "QR-EMR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/angelinac/Desktop/QR-EMR/QR-EMR/QRCodeReader.swift"
+                  timestampString = "451405353.288383"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QR_EMR.QRCodeReader.logoImage.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIImageView&gt;"
+                  moduleName = "QR-EMR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/angelinac/Desktop/QR-EMR/QR-EMR/QRCodeReader.swift"
+                  timestampString = "451405353.288769"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QR_EMR.QRCodeReader.logoImage.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIImageView&gt;"
+                  moduleName = "QR-EMR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/angelinac/Desktop/QR-EMR/QR-EMR/QRCodeReader.swift"
+                  timestampString = "451405353.289038"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QR_EMR.QRCodeReader.init (QR_EMR.QRCodeReader.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; QR_EMR.QRCodeReader"
+                  moduleName = "QR-EMR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/angelinac/Desktop/QR-EMR/QR-EMR/QRCodeReader.swift"
+                  timestampString = "451405353.28938"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "313">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QR_EMR.QRCodeReader.init (QR_EMR.QRCodeReader.Type)() -&gt; QR_EMR.QRCodeReader"
+                  moduleName = "QR-EMR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/angelinac/Desktop/QR-EMR/QR-EMR/QRCodeReader.swift"
+                  timestampString = "451405353.28964"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "242">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QR_EMR.QRCodeReader.init (QR_EMR.QRCodeReader.Type)(coder : ObjectiveC.NSCoder) -&gt; QR_EMR.QRCodeReader"
+                  moduleName = "QR-EMR"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/angelinac/Desktop/QR-EMR/QR-EMR/QRCodeReader.swift"
+                  timestampString = "451405353.289905"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "262">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
