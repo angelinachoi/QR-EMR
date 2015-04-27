@@ -209,7 +209,7 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         let location = qrDict["immunization"]?.valueForKey("location") as! String!
         // Immunization Fields
         
-        
+        // test
         
         
         
