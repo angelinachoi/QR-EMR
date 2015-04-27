@@ -209,11 +209,30 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         let location = qrDict["immunization"]?.valueForKey("location") as! String!
         // Immunization Fields
         
-        // test
+        let conDate = qrDict["consent"]?.valueForKey("date") as! String!
+        let conType = qrDict["consent"]?.valueForKey("type") as! String!
+        // Consent Fields
         
+        let relationship = qrDict["relation"]?.valueForKey("relationship") as! String!
+        let rfName = qrDict["relation"]?.valueForKey("fName") as! String!
+        let rmName = qrDict["relation"]?.valueForKey("mName") as! String!
+        let rlName = qrDict["relation"]?.valueForKey("lName") as! String!
+        // Relationship Fields
         
+        let pName = qrDict["provider"]?.valueForKey("name") as! String!
+        let pID = qrDict["provider"]?.valueForKey("ID") as! String!
+        let pOrg = qrDict["provider"]?.valueForKey("org") as! String!
+        // Provider Fields
         
-        
+        let a: Dictionary = ["resourceType":"Bundle",
+        "type":"document",
+        "entry": {
+            ["resource": ["resourceType":"Composition",
+            "date":"DTAESTAMP REQUIRED",
+            "status":"final",
+            "subject": {["reference": "#patient1"]},
+                "author": {["reference": "#practitioner1"], ["reference": "#device1"]}]]
+        }]
     }
     
     func stopReading () { // Stops the QR Reader camera process
