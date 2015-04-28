@@ -32,8 +32,6 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             instructionLabel.hidden = false
         }
         }
-    
-    let ValidCharacterSet: NSCharacterSet = NSCharacterSet(charactersInString: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,")
     var isReading = Bool()
     var captureSession: AVCaptureSession?
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
@@ -141,9 +139,12 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             let alert: UIAlertController = UIAlertController(title: "QR Label Decoded", message: "\(qrLabel)\n\nWould you like to submit this information to the server?", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default, handler: { ( action: UIAlertAction!) in
                 self.convertAndSend(qrLabel)
+                println(self.JSONsent)
+
             }))
             alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+            
 
         } else { // if QR label is invalid for QR-EMR
             
@@ -383,6 +384,7 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                     var success = parseJSON["success"] as? Int
                     println("Success: \(success)")
                     self.JSONsent = true
+                    
                 }
                 else {
                     // json object was nil, something went wrong. Maybe server isn't running?
