@@ -355,7 +355,7 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         */
 
         var err: NSError?
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://libertyjavaopal2.mybluemix.net/rest/api/client")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://irfhir.mybluemix.net/rest/fhir/receipt/")!)
         var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
         
