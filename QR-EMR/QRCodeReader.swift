@@ -39,6 +39,7 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var audioPlayer: AVAudioPlayer?
     var qrCodeFrameView:UIView?
+    var JSONsent = Bool()
 
     
     override func viewDidLoad() {
@@ -187,15 +188,24 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         let fName = qrDict["patient"]?.valueForKey("fName") as! String!
         let mName = qrDict["patient"]?.valueForKey("mName") as! String!
         let lName = qrDict["patient"]?.valueForKey("lName") as! String!
+        println(fName)
+        println(mName)
+        println(lName)
         
         let DOB = qrDict["patient"]?.valueForKey("dob") as! String!
         let gender = qrDict["patient"]?.valueForKey("gender") as! String!
         let idTYPE = qrDict["patient"]?.valueForKey("id-type") as! String!
         let id = qrDict["patient"]?.valueForKey("id") as! String!
+        println(DOB)
+        println(gender)
+        println(idTYPE)
+        println(id)
         
         let email = qrDict["patient"]?.valueForKey("email") as! String!
         let phone = qrDict["patient"]?.valueForKey("phone") as! String!
         // Patient Fields
+        println(email)
+        println(phone)
         
         let immsDate = qrDict["immunization"]?.valueForKey("date") as! String!
         let immsCode = qrDict["immunization"]?.valueForKey("code") as! String!
@@ -208,37 +218,188 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         let manufacture = qrDict["immunization"]?.valueForKey("manufacture") as! String!
         let location = qrDict["immunization"]?.valueForKey("location") as! String!
         // Immunization Fields
+        println(immsCode) // NIL VALUE!!
+        println(immsDate)
+        println(agent)
+        println(lotNumber)
+        println(expDate)
+        println(site)
+        println(route)
+        println(dose)
+        println(manufacture)
+        println(location)
         
         let conDate = qrDict["consent"]?.valueForKey("date") as! String!
         let conType = qrDict["consent"]?.valueForKey("type") as! String!
         // Consent Fields
+        println(conDate)
+        println(conType)
         
         let relationship = qrDict["relation"]?.valueForKey("relationship") as! String!
         let rfName = qrDict["relation"]?.valueForKey("fName") as! String!
         let rmName = qrDict["relation"]?.valueForKey("mName") as! String!
         let rlName = qrDict["relation"]?.valueForKey("lName") as! String!
         // Relationship Fields
+        println(relationship)
+        println(rfName)
+        println(rmName)
+        println(rlName)
         
         let pName = qrDict["provider"]?.valueForKey("name") as! String!
         let pID = qrDict["provider"]?.valueForKey("ID") as! String!
         let pOrg = qrDict["provider"]?.valueForKey("org") as! String!
         // Provider Fields
+        println(pOrg)
+        println(pID)
+        println(pName)
         
-        let a: Dictionary = ["resourceType":"Bundle",
+        let date = NSDate()
+        let dateFormatter = NSDateFormatter()
+        let timeFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        var dateinformat: String = dateFormatter.stringFromDate(date)
+        // Date and Time Fields
+        
+        let patientJSON: [NSString : AnyObject] = ["resource":["resourceType":"patient",
+            "id":"patient1",
+            "identifier":[["type":idTYPE,
+                "value":id]],
+            "name":["text":"\(fName) \(mName) \(lName)"],
+            "telecom":[["system":"email","value":email],
+                ["system":"phone","value":phone]],
+            "gender":gender,
+            "birthDate":DOB]]
+        let vaccineJSON: [NSString : AnyObject] = ["resource":["resourceType":"immunization",
+            "date":immsDate,
+            "vaccineType":["coding":[["code":immsCode]],
+                "text":agent],
+            "patient":["reference":"#patient1"],
+            "wasNotGiven":false,
+            "reported":"false",
+            "performer":["reference":"#practitioner1"],
+            "manufacture":["reference":"#organization2"],
+            "location":["reference":"#location1"],
+            "lotNumber":lotNumber,
+            "expirationDate":expDate,
+            "site":["coding":[["code":site]]],
+            "route":["coding":[["code":route]]],
+            "doseQuantity":["value":dose]]]
+        let consentJSON: [NSString : AnyObject] = ["resource":["resourceType":"ConsentDirective",
+            "issued":conDate,
+            "subject":["reference":"#patient1"],
+            "signer":["type":["coding":[["code":conType]]],
+                "party":["reference":"#RelatedPerson1"]]]]
+        
+        let relatedJSON: [NSString : AnyObject] = ["resource":["resourceType":"RelatedPerson",
+            "id":"RelatedPerson1",
+            "relationship":["coding":[["code":relationship]],
+                "text":relationship],
+            "name":[
+                "text":"\(rfName) \(rmName) \(rlName)"]]]
+        let orgJSON: [NSString : AnyObject] = ["resource":["resourceType":"Organization",
+            "id":"organization1",
+            "name":pOrg]]
+        
+        
+        let mainJSON: [NSString : AnyObject] = ["resourceType":"Bundle",
         "type":"document",
-        "entry": {
-            ["resource": ["resourceType":"Composition",
-            "date":"DTAESTAMP REQUIRED",
+            "entry":[
+            ["resource":["resourceType":"Composition",
+            "date":dateinformat,
             "status":"final",
-            "subject": {["reference": "#patient1"]},
-                "author": {["reference": "#practitioner1"], ["reference": "#device1"]}]]
-        }]
+            "subject":[["reference":"#patient1"]],
+                "author":[["reference":"#practitioner1"],
+                    ["reference":"#device1"]]
+            ]],
+                ["resource":["resourceType":"practitioner",
+                    "id":"practitioner1",
+                    "identifier": [["value":pID]],
+                    "name":["text":pName],
+                    "practitionerRole":[
+                "managineOrganization":[
+                    "reference":"#organization1"]
+                ]]],
+                patientJSON,
+                vaccineJSON,
+                consentJSON,
+                relatedJSON,
+                orgJSON,
+                ["resource":["resourceType":"Organization",
+                    "id":"organization2",
+                    "name":manufacture]
+                ],
+                ["resource":["resourceType":"location",
+                    "id":"location1",
+                    "name":location]
+                ],
+                ["resource":["resourceType":"Device",
+                    "id":"#device1",
+                    "identifier":[["value":"QR-EMR v1.0"]]]]]]
+        
+        
+        /* Convert the dictionary into a data structure
+        var error: NSError?
+        let jsonData = NSJSONSerialization.dataWithJSONObject(mainJSON,
+            options: .PrettyPrinted,
+            error: &error)
+        
+        if let data = jsonData {
+            if data.length > 0 && error == nil {
+                println("Successfully serialized the dictionary into data")
+                
+                /* Then convert the data into a string */
+                let jsonString = NSString(data: data, encoding: NSUTF8StringEncoding)
+                println("JSON String = \(jsonString)")
+                
+            }}
+        */
+
+        var err: NSError?
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://libertyjavaopal2.mybluemix.net/rest/api/client")!)
+        var session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(mainJSON, options: nil, error: &err)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            println("Response: \(response)")
+            var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
+            println("Body: \(strData)")
+            var err: NSError?
+            var json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err)
+            let jsonString = NSString(data: data, encoding: NSUTF8StringEncoding)
+            println("JSON String = \(jsonString)")
+            if (err != nil) { // Did the JSONOBjectData constructor return an error?
+                println(err!.localizedDescription)
+                let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
+                println("Error could not parse JSON: '\(jsonStr)'")
+            }
+            else { // The JSONObjectWithData constructor didn't return an error.
+                // Should still check to ensure that json has a value using optional binding.
+                if let parseJSON: AnyObject = json {
+                    // The parsedJSON is here, let's get the value for success out of it.
+                    var success = parseJSON["success"] as? Int
+                    println("Success: \(success)")
+                    self.JSONsent = true
+                }
+                else {
+                    // json object was nil, something went wrong. Maybe server isn't running?
+                    let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
+                    println("Error could not parse JSON: \(jsonStr)")
+                    self.JSONsent = false
+                }
+            }
+        })
+        task.resume()
     }
     
     func stopReading () { // Stops the QR Reader camera process
         captureSession?.stopRunning()
         captureSession = nil
-        
-        videoPreviewLayer?.removeFromSuperlayer() }
+
+        videoPreviewLayer?.removeFromSuperlayer()
+    }
     
 }
