@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Code Reader-->
@@ -36,41 +35,26 @@
                                     <constraint firstAttribute="height" constant="48" id="weu-GA-QLW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact">
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qxv-cr-ZHT">
-                                <rect key="frame" x="16" y="28" width="568" height="472"/>
-                                <string key="text">QR-EMR is an app to scan medical QR Labels in a particular JSON format to convert to another JSON format Pankil-style so the information can be sent to the Pankil-server. Tap the Start Button below to start scanning.</string>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                </variation>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mLS-7T-eWm" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="14A-5V-yWt"/>
-                            <constraint firstItem="qxv-cr-ZHT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="BKq-7X-IAc"/>
                             <constraint firstItem="1Qx-Km-VcW" firstAttribute="trailing" secondItem="mLS-7T-eWm" secondAttribute="trailing" id="FhK-Or-NIf"/>
                             <constraint firstItem="1Qx-Km-VcW" firstAttribute="bottom" secondItem="mLS-7T-eWm" secondAttribute="top" id="HUE-Yh-8CX"/>
                             <constraint firstItem="1Qx-Km-VcW" firstAttribute="leading" secondItem="mLS-7T-eWm" secondAttribute="leading" id="JNs-NI-dbt"/>
-                            <constraint firstItem="1Qx-Km-VcW" firstAttribute="top" secondItem="qxv-cr-ZHT" secondAttribute="bottom" constant="8" symbolic="YES" id="JVx-Bv-Ma2"/>
                             <constraint firstItem="mLS-7T-eWm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kw9-Rx-qG1"/>
-                            <constraint firstItem="qxv-cr-ZHT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Pwr-6b-zDc"/>
                             <constraint firstAttribute="trailing" secondItem="mLS-7T-eWm" secondAttribute="trailing" id="TPY-Ni-oeO"/>
-                            <constraint firstItem="qxv-cr-ZHT" firstAttribute="centerX" secondItem="1Qx-Km-VcW" secondAttribute="centerX" id="d2k-5e-X63"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bbitemStart" destination="ijx-ZH-0eZ" id="tQD-JU-dFL"/>
                         <outlet property="buttonBar" destination="mLS-7T-eWm" id="qz7-zj-488"/>
-                        <outlet property="instructionLabel" destination="qxv-cr-ZHT" id="lFF-ML-DHN"/>
                         <outlet property="lblStatus" destination="1Qx-Km-VcW" id="ihp-YE-t37"/>
                     </connections>
                 </viewController>

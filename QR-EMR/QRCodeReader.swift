@@ -15,7 +15,7 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     @IBOutlet weak var bbitemStart: UIBarButtonItem!
     @IBOutlet weak var buttonBar: UIToolbar! // Outlets for QR Reader Screen
     
-    @IBOutlet weak var instructionLabel: UITextView!
+
     
     @IBAction func initiateQRReader(sender: UIBarButtonItem) { // Screen Button initiates camera and scan.
         if isReading == false {
@@ -23,13 +23,13 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             self.bbitemStart.title = "Stop"
             self.lblStatus.text = "Scanning for Code..."
             isReading = true
-            instructionLabel.hidden = true
+
         } else {
             self.stopReading()
             self.bbitemStart.title = "Start"
             self.lblStatus.text = "Code Reader is not running."
             isReading = false
-            instructionLabel.hidden = false
+
         }
         }
     var isReading = Bool()
@@ -186,6 +186,8 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         let qrJSON = (stringSubject as NSString).dataUsingEncoding(NSUTF8StringEncoding)
         let qrDict: NSDictionary = retrieveJsonFromData(qrJSON!) // Use JSON to parse code
         
+        let informationSource = qrDict["infoSrce"] as! String!
+        
         let fName = qrDict["patient"]?.valueForKey("fName") as! String!
         let mName = qrDict["patient"]?.valueForKey("mName") as! String!
         let lName = qrDict["patient"]?.valueForKey("lName") as! String!
@@ -197,20 +199,25 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         let gender = qrDict["patient"]?.valueForKey("gender") as! String!
         let idTYPE = qrDict["patient"]?.valueForKey("id-type") as! String!
         let id = qrDict["patient"]?.valueForKey("id") as! String!
-        println(DOB)
-        println(gender)
-        println(idTYPE)
-        println(id)
+        
+        let unitNumber = qrDict["patient"]?.valueForKey("uNo") as! String!
+        let streetNumber = qrDict["patient"]?.valueForKey("sNo") as! String!
+        let streetName = qrDict["patient"]?.valueForKey("sName") as! String!
+        let POBox = qrDict["patient"]?.valueForKey("POB") as! String!
+        let city = qrDict["patient"]?.valueForKey("city") as! String!
+        let pCode = qrDict["patient"]?.valueForKey("pCode") as! String! // Address Fields
         
         let email = qrDict["patient"]?.valueForKey("email") as! String!
         let phone = qrDict["patient"]?.valueForKey("phone") as! String!
+        
+        let school = qrDict["patient"]?.valueForKey("sch") as! String!
+        let grade = qrDict["patient"]?.valueForKey("gr") as! String!
         // Patient Fields
-        println(email)
-        println(phone)
         
         let immsDate = qrDict["immunization"]?.valueForKey("date") as! String!
         let immsCode = qrDict["immunization"]?.valueForKey("code") as! String!
         let agent = qrDict["immunization"]?.valueForKey("agent") as! String!
+        let status = qrDict["immunization"]?.valueForKey("status") as! String!
         let lotNumber = qrDict["immunization"]?.valueForKey("lotNo") as! String!
         let expDate = qrDict["immunization"]?.valueForKey("expDate") as! String!
         let site = qrDict["immunization"]?.valueForKey("site") as! String!
@@ -218,46 +225,26 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         let dose = qrDict["immunization"]?.valueForKey("dose") as! String!
         let manufacture = qrDict["immunization"]?.valueForKey("manufacture") as! String!
         let location = qrDict["immunization"]?.valueForKey("location") as! String!
+        let disease = qrDict["immunization"]?.valueForKey("disease") as! String! // Disease Field: Newly Added
         // Immunization Fields
         println(immsCode) // NIL VALUE!!
-        println(immsDate)
-        println(agent)
-        println(lotNumber)
-        println(expDate)
-        println(site)
-        println(route)
-        println(dose)
-        println(manufacture)
-        println(location)
         
         let conDate = qrDict["consent"]?.valueForKey("date") as! String!
-        let conType = qrDict["consent"]?.valueForKey("type") as! String!
-        // Consent Fields
-        println(conDate)
-        println(conType)
+        let conType = qrDict["consent"]?.valueForKey("type") as! String! // Consent Fields
         
         let relationship = qrDict["relation"]?.valueForKey("relationship") as! String!
         let rfName = qrDict["relation"]?.valueForKey("fName") as! String!
         let rmName = qrDict["relation"]?.valueForKey("mName") as! String!
-        let rlName = qrDict["relation"]?.valueForKey("lName") as! String!
-        // Relationship Fields
-        println(relationship)
-        println(rfName)
-        println(rmName)
-        println(rlName)
+        let rlName = qrDict["relation"]?.valueForKey("lName") as! String! // Relationship Fields
         
         let pName = qrDict["provider"]?.valueForKey("name") as! String!
         let pID = qrDict["provider"]?.valueForKey("ID") as! String!
-        let pOrg = qrDict["provider"]?.valueForKey("org") as! String!
-        // Provider Fields
-        println(pOrg)
-        println(pID)
-        println(pName)
+        let pOrg = qrDict["provider"]?.valueForKey("org") as! String! // Provider Fields
         
         let date = NSDate()
         let dateFormatter = NSDateFormatter()
         let timeFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         var dateinformat: String = dateFormatter.stringFromDate(date)
         // Date and Time Fields
         
@@ -269,7 +256,16 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             "telecom":[["system":"email","value":email],
                 ["system":"phone","value":phone]],
             "gender":gender,
+            "organization":school,
+            "period":grade,
+            
+            "address":[["use":"home","line":["\(unitNumber) \(streetNumber) \(streetName) \(city) \(pCode) \(POBox)"],
+                "city": city,
+                "postalCode":pCode
+                ]],
+            
             "birthDate":DOB]]
+        
         let vaccineJSON: [NSString : AnyObject] = ["resource":["resourceType":"immunization",
             "date":immsDate,
             "vaccineType":["coding":[["code":immsCode]],
@@ -284,7 +280,10 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             "expirationDate":expDate,
             "site":["coding":[["code":site]]],
             "route":["coding":[["code":route]]],
-            "doseQuantity":["value":dose]]]
+            "doseQuantity":["value":dose]],
+            "vaccinationProtocol": [["doseTarget":[["code":disease]]]],
+            "description":status
+        ]
         let consentJSON: [NSString : AnyObject] = ["resource":["resourceType":"ConsentDirective",
             "issued":conDate,
             "subject":["reference":"#patient1"],
@@ -300,13 +299,18 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         let orgJSON: [NSString : AnyObject] = ["resource":["resourceType":"Organization",
             "id":"organization1",
             "name":pOrg]]
+        println(patientJSON)
+        println(vaccineJSON)
+        println(consentJSON)
+        println(relatedJSON)
+        println(orgJSON)
         
-        
-        let mainJSON: [NSString : AnyObject] = ["resourceType":"Bundle",
+        var mainJSON: [NSString : AnyObject] = ["resourceType":"Bundle",
         "type":"document",
             "entry":[
             ["resource":["resourceType":"Composition",
             "date":dateinformat,
+                "author":[["reference":"#practitioner1"],["reference":"#device1"]],
             "status":"final",
             "subject":[["reference":"#patient1"]],
                 "author":[["reference":"#practitioner1"],
@@ -337,7 +341,10 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                     "id":"#device1",
                     "identifier":[["value":"QR-EMR v1.0"]]]]]]
         
-        
+        // See outline of main JSON for FHIR
+        println(mainJSON)
+        println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+
         /* Convert the dictionary into a data structure
         var error: NSError?
         let jsonData = NSJSONSerialization.dataWithJSONObject(mainJSON,
@@ -353,8 +360,8 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 println("JSON String = \(jsonString)")
                 
             }}
-        */
 
+        */
         var err: NSError?
         var request = NSMutableURLRequest(URL: NSURL(string: "http://irfhir.mybluemix.net/rest/fhir/receipt/")!)
         var session = NSURLSession.sharedSession()
@@ -364,6 +371,20 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
+        let jsonData = NSJSONSerialization.dataWithJSONObject(mainJSON, options: .PrettyPrinted, error: &err)
+        if let data = jsonData {
+            if data.length > 0 && err == nil {
+                println("Successfully serialized the dictionary into data")
+                
+                let jsonString = NSString(data: data, encoding: NSUTF8StringEncoding)
+                println("JSON String = \(jsonString)")
+            } else if data.length == 0 && err == nil {
+                println("No data was returned after serialization")
+            } else if err != nil {
+                println("Ann error happened = \(err)")
+            }
+        }
+       // var json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err)
         var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             println("Response: \(response)")
             var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
@@ -376,6 +397,10 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 println(err!.localizedDescription)
                 let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
                 println("Error could not parse JSON: '\(jsonStr)'")
+                
+                let alert: UIAlertController = UIAlertController(title: "Error", message: "JSON could not be parsed.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
             }
             else { // The JSONObjectWithData constructor didn't return an error.
                 // Should still check to ensure that json has a value using optional binding.
@@ -385,12 +410,20 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                     println("Success: \(success)")
                     self.JSONsent = true
                     
+                    let alert: UIAlertController = UIAlertController(title: "Success", message: "JSON was parsed and sent.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
                 }
                 else {
                     // json object was nil, something went wrong. Maybe server isn't running?
                     let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
                     println("Error could not parse JSON: \(jsonStr)")
                     self.JSONsent = false
+                    
+                    let alert: UIAlertController = UIAlertController(title: "Error", message: "JSON could not be parsed.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
             }
         })
