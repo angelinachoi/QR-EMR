@@ -344,6 +344,7 @@ class QRCodeReader: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         // See outline of main JSON for FHIR
         println(mainJSON)
         println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        println("test")
 
         /* Convert the dictionary into a data structure
         var error: NSError?
